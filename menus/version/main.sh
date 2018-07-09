@@ -27,7 +27,7 @@ TITLE="Select A PlexGuide Version"
 MENU="Update to PG 6.011 to see FURTHER UPDATES"
 
 OPTIONS=(Z "----- Exit Menu -----"
-         01 "PG 5 to 6.009")
+         01 "PG 5 to 6.011")
 
 CHOICE=$(dialog --clear \
                 --backtitle "$BACKTITLE" \
