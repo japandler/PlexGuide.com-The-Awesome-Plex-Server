@@ -27,7 +27,7 @@ TITLE="Select A PlexGuide Version"
 MENU="Update to PG 6.011 to see FURTHER UPDATES"
 
 OPTIONS=(Z "----- Exit Menu -----"
-         01 "PG 5 to 6.011")
+         01 "PG 5 to 6.013")
 
 CHOICE=$(dialog --clear \
                 --backtitle "$BACKTITLE" \
@@ -46,7 +46,7 @@ echo 'INFO - Selected: Exit Upgrade Menu' > /var/plexguide/pg.log && bash /opt/p
             ;;
         01)
             touch /var/plexguide/ask.yes 1>/dev/null 2>&1
-            version="6.011" ;;
+            version="6.013" ;;
 esac
 
 file="/var/plexguide/ask.yes"
