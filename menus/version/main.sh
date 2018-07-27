@@ -27,7 +27,7 @@ TITLE="Select A PlexGuide Version"
 MENU="Update to PG 6.011 to see FURTHER UPDATES"
 
 OPTIONS=(Z "----- Exit Menu -----"
-         01 "PG 5 to 6.015")
+         01 "PG 5 to 6.019")
 
 CHOICE=$(dialog --clear \
                 --backtitle "$BACKTITLE" \
@@ -45,8 +45,12 @@ echo 'INFO - Selected: Exit Upgrade Menu' > /var/plexguide/pg.log && bash /opt/p
             exit 0
             ;;
         01)
+            docker stop traefik2 1>/dev/null 2>&1
+            docker stop traefikdeploy 1>/dev/null 2>&1
+            docker rm traefik2 1>/dev/null 2>&1
+            docker rm traefikdeploy 1>/dev/null 2>&1
             touch /var/plexguide/ask.yes 1>/dev/null 2>&1
-            version="6.015" ;;
+            version="6.019" ;;
 esac
 
 file="/var/plexguide/ask.yes"
